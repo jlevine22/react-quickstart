@@ -10,6 +10,7 @@ var buffer = require('vinyl-buffer');
 var serve = require('gulp-serve');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
+var lint = require('gulp-eslint');
 
 /**
  * JavaScript bundling with browserify
@@ -71,6 +72,12 @@ gulp.task('less:production', function() {
         .pipe(less())
         .pipe(minifyCss())
         .pipe(gulp.dest('build/'));
+});
+
+gulp.task('lint', function() {
+    return gulp.src(['src/js/**/*.js', 'src/app.js'])
+        .pipe(lint())
+        .pipe(lint.format());
 });
 
 gulp.task('build', ['browserify:production', 'less:production']);

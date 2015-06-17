@@ -1,5 +1,7 @@
+'use strict';
+
 var React = require('react');
-var someFunction = require('./otherfile.js');
+var someFunction = require('./js/otherfile.js');
 
 var MyApp = React.createClass({
 

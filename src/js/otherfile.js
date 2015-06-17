@@ -1,3 +1,5 @@
+'use strict';
+
 var someFunction = function() {
     console.log('someFunction called...');
 };
